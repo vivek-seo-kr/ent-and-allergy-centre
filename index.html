@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENT and Allergy Centre - Dr. Neeti Kakkar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .faq-item.active .faq-content {
+            max-height: 200px;
+            padding-bottom: 1.25rem;
+        }
+        .faq-item.active .chevron {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="bg-[#FDFCFB] text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-blue-600 p-1.5 rounded-lg">
+                        <i data-lucide="stethoscope" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <span class="font-bold text-lg tracking-tight text-slate-800">
+                        Dr. Neeti Kakkar
+                    </span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+                    <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#reviews" class="hover:text-blue-600 transition-colors">Reviews</a>
+                    <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a>
+                    <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="tel:09418497700" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
+                        Call Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="p-2">
+                        <i data-lucide="menu" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 py-4 space-y-4">
+            <a href="#home" class="block w-full text-left py-2 font-medium mobile-link">Home</a>
+            <a href="#about" class="block w-full text-left py-2 font-medium mobile-link">About</a>
+            <a href="#services" class="block w-full text-left py-2 font-medium mobile-link">Services</a>
+            <a href="#reviews" class="block w-full text-left py-2 font-medium mobile-link">Reviews</a>
+            <a href="#faq" class="block w-full text-left py-2 font-medium mobile-link">FAQ</a>
+            <a href="#contact" class="block w-full text-left py-2 font-medium mobile-link">Contact</a>
+            <a href="tel:09418497700" class="block w-full text-center bg-blue-600 text-white py-3 rounded-xl font-bold">Call Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                    <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                    Top Rated ENT Specialist in Shimla
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
+                    ENT and Allergy Centre <br />
+                    <span class="text-blue-600">Dr. Neeti Kakkar</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">
+                    Providing expert care for Ear, Nose, Throat, Allergy, Asthma, and Vertigo in the heart of Shimla. Over 13 years of excellence in patient care.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:09418497700" class="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
+                        <i data-lucide="phone" class="w-5 h-5"></i>
+                        Book Appointment
+                    </a>
+                    <a href="#services" class="flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 px-8 py-4 rounded-2xl font-bold hover:bg-slate-50 transition-all">
+                        Our Services
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                
+                <div class="mt-10 flex items-center gap-6">
+                    <div class="flex items-center gap-1">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <span class="font-bold text-slate-800 ml-2">4.8</span>
+                        <span class="text-slate-500 text-sm">(89 Reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative fade-in">
+                <div class="aspect-square rounded-[2rem] overflow-hidden shadow-2xl relative z-10">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepPN2a1zk6b8uauBJe154Y7nLSLdpqj5vXwjqpzppGvXuS9BpA8gbOh6sdfGnnx84rCHEU8tu4tCT-CtQnlmKxd9bf0TNoFpks18FoEgJBfuFLpUgSX6JMc5cnF9UlQScBWDY6p=s1360-w1360-h1020-rw" alt="ENT and Allergy Centre Clinic" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div class="absolute -top-6 -right-6 w-32 h-32 bg-blue-100 rounded-full -z-10 blur-2xl opacity-60"></div>
+                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-50 rounded-full -z-10 blur-3xl opacity-80"></div>
+                
+                <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl z-20 border border-white/20">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-100 p-2 rounded-full text-green-600">
+                            <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Status</p>
+                            <p class="text-sm font-bold text-slate-800">Open Tomorrow at 9:30 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Specialized Medical Services</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Expert diagnosis and advanced treatment options for a wide range of ENT and respiratory conditions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-all fade-in">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="stethoscope" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">ENT Specialist</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Comprehensive diagnosis and treatment for ear, nose, and throat disorders.</p>
+                    <button class="text-blue-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        Learn More <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-all fade-in">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="wind" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Allergy & Asthma</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Specialized care for allergic rhinitis, asthma, and various allergic conditions.</p>
+                    <button class="text-blue-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        Learn More <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-md transition-all fade-in">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Vertigo Management</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Expert assessment and management of vestibular disorders and balance issues.</p>
+                    <button class="text-blue-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                        Learn More <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative fade-in">
+                    <div class="aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-xl">
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweq36FvR-rPNo1fWE6g1TIKrexePnXKIHqwD6AMo75_1JAjN7GDU49_WQj-lBwNsU_jZnbnZWyMlJvg39yu7e1S6vg_kqxWJCjOJ0JjVkYj-AbhQ_b5Lfn8_Gh3vvdLOaDyQ0Sea=s1360-w1360-h1020-rw" alt="Dr. Neeti Kakkar" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 max-w-[240px]">
+                        <p class="text-blue-600 font-bold text-2xl mb-1">13+</p>
+                        <p class="text-slate-600 text-sm font-medium">Years of clinical experience in ENT and Allergy</p>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">About Dr. Neeti Kakkar</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Dr. Neeti Kakkar is a highly qualified Consultant ENT specialist dedicated to providing compassionate and comprehensive care. Her expertise spans across general ENT, specialized allergy management, and vestibular disorders.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-4">Qualifications</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="flex items-center gap-2 text-slate-700">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                                    <span class="text-sm font-medium">MBBS, MS-ENT</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-700">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                                    <span class="text-sm font-medium">Allergy Asthma Specialist Course (AASC)</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-700">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                                    <span class="text-sm font-medium">Fellowship in Allergy (FAAP)</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-700">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0"></i>
+                                    <span class="text-sm font-medium">Cyclops Vertigo Specialization</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-4">Fellowships & Specializations</h3>
+                            <div class="space-y-4">
+                                <div class="flex gap-3 text-slate-700">
+                                    <div class="w-6 h-6 bg-blue-50 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                                        <span class="text-blue-600 text-[10px] font-bold">1</span>
+                                    </div>
+                                    <p class="text-sm leading-relaxed">ENT- fellowship from MCV Memorial ENT trust Hospital Pollachi, Tamil Nadu, India.</p>
+                                </div>
+                                <div class="flex gap-3 text-slate-700">
+                                    <div class="w-6 h-6 bg-blue-50 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                                        <span class="text-blue-600 text-[10px] font-bold">2</span>
+                                    </div>
+                                    <p class="text-sm leading-relaxed">Allergy Asthma Specialist Course (AASC) Certified by Medtrian, Bharti Vidhyapeeth, Pune (Endorsed by AAAAI USA).</p>
+                                </div>
+                                <div class="flex gap-3 text-slate-700">
+                                    <div class="w-6 h-6 bg-blue-50 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                                        <span class="text-blue-600 text-[10px] font-bold">3</span>
+                                    </div>
+                                    <p class="text-sm leading-relaxed">Vertigo Specialization (Assessment Management of Vestibular disorder), Yenepoya Medical College, Mangalore.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 fade-in">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Patients Say</h2>
+                    <p class="text-blue-100">We take pride in providing the best medical care and facilities to our patients in Shimla.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10">
+                    <div class="flex items-center gap-2 mb-1">
+                        <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+                        <span class="text-2xl font-bold">4.8</span>
+                        <span class="text-blue-200">/ 5</span>
+                    </div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-blue-200">Google Rating</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 fade-in">
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="italic text-blue-50 mb-6 leading-relaxed">"Best experience Best facilities and good manner staff And satisfied treatment"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center font-bold text-sm">V</div>
+                        <span class="font-bold">Vishal Kanojiya</span>
+                    </div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 fade-in">
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="italic text-blue-50 mb-6 leading-relaxed">"Best diagnosis and good behavior soft Spoken."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center font-bold text-sm">H</div>
+                        <span class="font-bold">Hemraj Sharma</span>
+                    </div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 fade-in">
+                    <div class="flex gap-1 mb-4 text-yellow-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="italic text-blue-50 mb-6 leading-relaxed">"Had a very pleasant experience, Excellent service spirit and reliable"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center font-bold text-sm">K</div>
+                        <span class="font-bold">kulbhushn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-slate-600">Common questions about our services and appointments.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm fade-in">
+                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="font-bold text-slate-800">What services are offered at the ENT and Allergy Centre?</span>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400 transition-transform chevron"></i>
+                    </button>
+                    <div class="faq-content px-6 text-slate-600 leading-relaxed text-sm">
+                        We specialize in Ear, Nose, and Throat (ENT) disorders, comprehensive Allergy and Asthma management, and specialized Vertigo/Vestibular disorder treatments.
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm fade-in">
+                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="font-bold text-slate-800">Do I need a referral to see Dr. Neeti Kakkar?</span>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400 transition-transform chevron"></i>
+                    </button>
+                    <div class="faq-content px-6 text-slate-600 leading-relaxed text-sm">
+                        While a referral from a general practitioner is helpful, you can book an appointment directly by calling us at 094184 97700.
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm fade-in">
+                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="font-bold text-slate-800">What should I bring to my first appointment?</span>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400 transition-transform chevron"></i>
+                    </button>
+                    <div class="faq-content px-6 text-slate-600 leading-relaxed text-sm">
+                        Please bring any previous medical records, relevant test results (X-rays, CT scans, blood reports), and a list of your current medications.
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm fade-in">
+                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="font-bold text-slate-800">How is vertigo treated?</span>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400 transition-transform chevron"></i>
+                    </button>
+                    <div class="faq-content px-6 text-slate-600 leading-relaxed text-sm">
+                        Vertigo treatment depends on the underlying cause. Dr. Neeti Kakkar provides specialized assessment and management of vestibular disorders using advanced diagnostic and management techniques.
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm fade-in">
+                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="font-bold text-slate-800">Is allergy testing available at the clinic?</span>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400 transition-transform chevron"></i>
+                    </button>
+                    <div class="faq-content px-6 text-slate-600 leading-relaxed text-sm">
+                        Yes, we offer comprehensive allergy testing and management plans, including specialized procedures for asthma and allergic rhinitis.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">Visit Our Centre</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1 text-lg">Location</h4>
+                                <p class="text-slate-600 leading-relaxed">
+                                    Shardia Complex, near Shiv Nagar, Kasumpti, <br />
+                                    Shimla, Himachal Pradesh 171009
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1 text-lg">Working Hours</h4>
+                                <p class="text-slate-600">Opens at 9:30 AM (Wed - Mon)</p>
+                                <p class="text-slate-400 text-sm mt-1">Please call to confirm availability</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-slate-100 rounded-2xl flex items-center justify-center shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 mb-1 text-lg">Phone</h4>
+                                <a href="tel:09418497700" class="text-blue-600 font-bold text-xl hover:underline">
+                                    094184 97700
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 p-8 bg-blue-50 rounded-[2rem] border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-2">Areas Served</h4>
+                        <p class="text-blue-700">Providing specialized ENT care across Shimla and surrounding regions.</p>
+                    </div>
+                </div>
+
+                <div class="h-[400px] md:h-full min-h-[400px] bg-slate-100 rounded-[2.5rem] overflow-hidden relative shadow-inner border border-slate-200 fade-in">
+                    <div class="absolute inset-0 flex items-center justify-center flex-col p-8 text-center">
+                        <i data-lucide="map-pin" class="w-12 h-12 text-slate-300 mb-4"></i>
+                        <p class="text-slate-500 font-medium mb-6">Interactive Map View</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=ENT+and+Allergy+Centre+Dr+Neeti+Kakkar+Shimla" target="_blank" class="bg-white text-slate-800 px-6 py-3 rounded-xl font-bold shadow-sm hover:shadow-md transition-all border border-slate-200">
+                            Get Directions on Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="bg-blue-600 p-1.5 rounded-lg">
+                            <i data-lucide="stethoscope" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight">Dr. Neeti Kakkar</span>
+                    </div>
+                    <p class="text-slate-400 max-w-md leading-relaxed">
+                        ENT and Allergy Centre is a premier medical facility in Shimla dedicated to providing specialized care for ear, nose, throat, and respiratory conditions.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-slate-500">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Dr. Neeti</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#reviews" class="hover:text-white transition-colors">Patient Reviews</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-6 text-sm uppercase tracking-widest text-slate-500">Contact</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex gap-2">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-500 shrink-0"></i>
+                            <span>Kasumpti, Shimla, HP</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-500 shrink-0"></i>
+                            <span>094184 97700</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+                <p>© 2026 ENT and Allergy Centre, Dr. Neeti Kakkar. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+            lucide.createIcons();
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll animations using Intersection Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
